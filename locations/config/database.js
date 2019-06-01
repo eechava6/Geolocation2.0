@@ -26,13 +26,7 @@ var config = {
   },
 
   prod: {
-    baseUrl: "/",
-    root: rootPath,
-    app: {
-      name: 'locationsMS'
-    },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://mongo-server/locationsMS'
+    db:"mongodb+srv://write:estebans@microservicios-fittf.mongodb.net/locationMS?retryWrites=true&w=majority"
   }
 };
 
