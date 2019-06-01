@@ -26,13 +26,7 @@ var config = {
   },
 
   prod: {
-    baseUrl: "/",
-    root: rootPath,
-    app: {
-      name: 'usersMS'
-    },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://mongo-server/usersMS'
+    db:"mongodb+srv://write:estebans@microservicios-fittf.mongodb.net/userMS?retryWrites=true&w=majority"
   }
 };
 
