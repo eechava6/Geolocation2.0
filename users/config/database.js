@@ -9,30 +9,30 @@ var config = {
     baseUrl: "/",
     root: rootPath,
     app: {
-      name: 'TrackingGpsPR1'
+      name: 'usersMS'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/TrackingGps'
+    db: 'mongodb://localhost/usersMS'
   },
 
   test: {
     baseUrl: "/",
     root: rootPath,
     app: {
-      name: 'TrackingGpsPR1'
+      name: 'usersMS'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://mongo-server/TrackingGps'
+    db: 'mongodb://mongo-server/usersMS'
   },
 
   prod: {
     baseUrl: "/",
     root: rootPath,
     app: {
-      name: 'TrackingGpsPR1'
+      name: 'usersMS'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://mongo-server/TrackingGps'
+    db: 'mongodb://mongo-server/usersMS'
   }
 };
 
