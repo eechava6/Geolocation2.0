@@ -12,7 +12,6 @@ const locations = require('./routes/locations')
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const uuid = require('uuid/v4')
-const passport = require('passport');
 
 
 

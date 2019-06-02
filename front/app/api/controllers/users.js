@@ -36,7 +36,6 @@ authenticate: async(req, res, next) =>{
 //Deletes the cookie created for the user
 //and redirects him to login URI
  logout: async(req, res, next) =>{
-    console.log(req.session.data)
    if(req.session.data) {
     req.session.destroy();
     }
@@ -46,7 +45,6 @@ authenticate: async(req, res, next) =>{
 //If user logged previously : redirects to UserPage
 //If user has not log in the system, loads registration page.
    loadRegister: async(req, res, next) =>{
-      console.log(req.session.data)
       if(req.session.data) {
          res.redirect('./userPage')
        }else{
@@ -61,7 +59,6 @@ authenticate: async(req, res, next) =>{
 //If user logged previously : redirects to UserPage
 //If user has not log in the system, loads authentication page.
    loadAuthenticate: async(req, res, next) => {
-      console.log(req.session.data)
       if(req.session.data) {
          res.redirect('./userPage')
        } else {
