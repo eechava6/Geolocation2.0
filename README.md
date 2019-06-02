@@ -7,7 +7,7 @@
 * Esteban Echavarría
 
 
-### Building the container image from every microservice: 
+### Build a container image for a microservice: 
 
 * Go to the desired microservice folder and paste the following code
 
