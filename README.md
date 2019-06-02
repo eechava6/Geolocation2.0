@@ -1,7 +1,7 @@
 # Proyecto Final - Geolocation 2.0
 
 
-# Integrantes
+## Integrantes
 
-Esteban Perez 
-Esteban Echavarría
+* Esteban Perez 
+* Esteban Echavarría
