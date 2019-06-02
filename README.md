@@ -19,6 +19,6 @@
 
 `docker run -p {local-desired-port}:{running-port-in-container}/tcp  {image-name}`
 
-* example: run the image usersMS mapping container port 5000/tcp to local port 3000
+**example**: run the image usersMS mapping container port 5000/tcp to local port 3000
 
 `docker run -p 3000:5000/tcp  usersMS`
