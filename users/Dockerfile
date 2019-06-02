@@ -1,7 +1,7 @@
 FROM node:9.6.1
 
 LABEL version="1.0"
-LABEL description="Microservicio front-end"
+LABEL description="Microservicio Usuarios"
 LABEL maintainer="Esteban Echavarria - Esteban Pérez"
 
 ARG PORT=3000
