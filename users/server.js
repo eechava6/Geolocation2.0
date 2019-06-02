@@ -11,6 +11,8 @@ const mongoose = require('mongoose');
 //Creates the instance
 const app = express();
 
+//Authentication script
+const passport = require('passport');
 //Connection to DB
 mongoose.connect(config.db,{ useNewUrlParser: true });
 var db = mongoose.connection;
@@ -20,9 +22,11 @@ db.on('error', function () {
 });
 
 
+
 //App middleware start
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(passport.initialize());
 
 //Redirect all '/' request  to authentication.
 app.get('/', function(req, res){  
@@ -48,3 +52,4 @@ let port = 3000
 app.listen(port, function(){
 	console.log('Node server listening on port '+port);
 });
+
