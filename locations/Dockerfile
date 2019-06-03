@@ -13,4 +13,4 @@ COPY . ./
 RUN npm install --test
 
 EXPOSE 4000
-CMD npm start
+CMD npm run prod
