@@ -26,6 +26,7 @@ module.exports = {
  //Search all locations related to a user, user just send post request
  //and system determines username and calls DB finding his routes history
  search: function(req, res, next) {
+    console.log(req.body.username)
     locationModel.find({username:req.body.username},'trackId latitude longitude hour date -_id',
      function(err, userInfo){
      if (userInfo == null || err) {
