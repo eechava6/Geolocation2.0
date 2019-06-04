@@ -7,14 +7,15 @@ const users = require('./routes/users');
 const locations = require('./routes/locations')
 
 
-
 //Session imports
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const uuid = require('uuid/v4')
 
-
-
+ 
+//Communication and discovery
+const PORT = require('./config/instance')
+const client = require('./config/eureka-client')
 
 //Creates the instance
 const app = express();
@@ -58,8 +59,11 @@ app.use(function(err, req, res, next) {
     }
 });
 
+
+
+client.start()
 //Server listening at port 3000
-let port = 5000
-app.listen(port, function(){
-	console.log('Node server listening on port '+port);
+
+app.listen(PORT, function(){
+	console.log('Node server listening on port '+PORT);
 });
