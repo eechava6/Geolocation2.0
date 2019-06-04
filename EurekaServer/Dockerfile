@@ -1,7 +1,7 @@
 
 
 #jdk image
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM adoptopenjdk/openjdk12:jre-12.33
 
 # install
 
@@ -15,8 +15,9 @@ ARG VERSION=0.0.1
 VOLUME /tmp
 
 # Add the service as app.jar
-ADD target/eureka-server-${VERSION}-SNAPSHOT.jar app.jar
+ADD target/EurekaServer-0.0.1-SNAPSHOT.jar app.jar
 
+EXPOSE 8761
 # touch the archive for timestamp
 RUN sh -c 'touch /app.jar'
 
