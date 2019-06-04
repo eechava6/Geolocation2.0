@@ -7,8 +7,13 @@ const locations = require('./routes/locations')
 const config = require('./config/database'); //database configuration
 const mongoose = require('mongoose');
 
+//Communication and discovery
+const PORT = require('./config/instance')
+const client = require('./config/eureka-client')
+
 //Creates the instance
 const app = express();
+
 
 
 //Connection to DB
@@ -42,8 +47,10 @@ app.use(function(err, req, res, next) {
     }
 });
 
-//Server listening at port 3000
-let port = 4000
-app.listen(port, function(){
-	console.log('Node server listening on port '+port);
+
+client.start()
+var server = app.listen(PORT, function(){
+	console.log('Node server listening on port '+PORT);
 });
+
+console.log(server.address())
