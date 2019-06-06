@@ -6,7 +6,7 @@ statusURL = "http://"+args[3]+":"+PORT
 const client = new Eureka({
     // application instance information
     instance: {
-      app: 'front',
+      app: 'users',
       hostName: args[3],
       ipAddr: args[3],
       statusPageUrl: statusURL,
