@@ -48,5 +48,16 @@ Funciona como un wrapper para los microservicios que usan datos.
 
 /* Servicio Web: Busca las ubicaciones que ha guardado un usuario 
   Método: GET
-  URI: /locations/searchLocation?username=val
+  URI: /locations/authenticateUser
 */
+
+/* Servicio Web: Busca las ubicaciones que ha guardado un usuario 
+  Método: GET
+  URI: /locations/searchLocation
+*/
+
+/* Servicio Web: Busca las ubicaciones que ha guardado un usuario 
+  Método: GET
+  URI: /locations/registerUser
+*/
+
