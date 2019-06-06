@@ -1,3 +1,3 @@
-PORT = 5000
-
+const args = process.argv;
+PORT = args[2]
 module.exports = PORT

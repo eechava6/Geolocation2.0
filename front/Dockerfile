@@ -4,13 +4,17 @@ LABEL version="1.0"
 LABEL description="Microservicio front-end"
 LABEL maintainer="Esteban Echavarria - Esteban Pérez"
 
-ARG PORT=5000
+
 ENV PORT $PORT
+ENV HOST $HOST
+ENV EUREKA $EUREKA
 
 WORKDIR /nodeApp
 COPY . ./
 
 RUN npm install --test
 
-EXPOSE 5000
+EXPOSE $HOST
 CMD npm start
+
+CMD ["sh", "-c", "node server.js ${PORT} ${HOST} ${EUREKA}"]

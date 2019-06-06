@@ -61,10 +61,7 @@ app.use(function(err, req, res, next) {
 
 
 //Server listening at port 3000
-
-const server = app.listen(PORT, function(){
+app.listen(PORT, function(){
 	console.log('Node server listening on port '+PORT);
 });
 
-
-console.log(server.address())
