@@ -31,3 +31,6 @@
 
 `docker run -p 4000:4000 -e PORT=4000 -e HOST={host} -e EUREKA={eureka-host} --name {service} -d {service}`
 
+**To run Eureka**
+
+`docker run -p 8761:8080 --name eureka -d eureka
