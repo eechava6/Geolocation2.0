@@ -1,11 +1,12 @@
 # Final project - Geolocation 2.0
 
-## Members
+# Members
 
 * Esteban Perez 
 * Esteban Echavarría
 
-## 1. Analisis y Diseño
+
+# Project requirements per environment
 
 
 ## Requirements for development environment:
@@ -68,6 +69,7 @@
 
 `npm run dev {desired-port} {host-ip} {eureka-host-ip}`
 
+## Usefull commands
 
 ### Build a container image for a microservice: 
 
@@ -89,7 +91,7 @@
 
 `docker run -p 80:80 -p 443:443 -v /etc/certificates:/etc/certificates --name nginx -d nginx`
 
-**To pass parameters to Dockerfile**
+**To pass parameters to Dockerfile** (Actually this is how microservices works in production 
 
 `docker run -p 4000:4000 -e PORT=4000 -e HOST={host} -e EUREKA={eureka-host} --name {service} -d {service}`
 
