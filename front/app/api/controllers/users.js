@@ -3,13 +3,26 @@ const fs = require('fs');
 
 //Axios to make HTTP asynchronous request
 const axios = require('axios')
+const client = require('../../../config/eureka-client')
+
+function getURL(){
+   instances = client.getInstancesByAppId('USERS');
+   random = Math.floor((Math.random()*instances.length-1) + 1);
+   return instances[random];
+}
 
 module.exports = {
 
 //Creates a new user, user send a post request with username, password and email 
 //and the method calls DB using User model
  create: async(req, res, next) => {
-   axios.post('http://localhost:3000/registerUser', {
+   try {
+      host = getURL().statusPageUrl
+     } catch (host) {
+      return res.json({status:"host"})
+     }
+   host = host+"/registerUser"
+   axios.post(host, {
       username: req.body.username, 
       email: req.body.email, 
       password: req.body.password 
@@ -21,7 +34,13 @@ module.exports = {
 //Calls passport authentication, user send
 //username and password and passport determines if match with DB
 authenticate: async(req, res, next) =>{
-   axios.post('http://localhost:3000/authenticateUser', {
+   try {
+      host = getURL().statusPageUrl
+     } catch (host) {
+      return res.json({status:"host"})
+     }
+   host = host+"/authenticateUser"
+   axios.post(host, {
       username: req.body.username, 
       password: req.body.password 
     }).then(function (response) {

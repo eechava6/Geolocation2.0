@@ -1,4 +1,5 @@
 const Eureka = require('eureka-js-client').Eureka;
+const PORT = require('./instance')
 
 const client = new Eureka({
     // application instance information
@@ -26,5 +27,10 @@ const client = new Eureka({
       servicePath: '/eureka/apps/',
     },
 });
+
+client.start(error => {
+  console.log('Eureka client connected')
+})
+
 
 module.exports = client

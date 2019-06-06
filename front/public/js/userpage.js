@@ -1,6 +1,11 @@
 
 var map; 
-
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+  });
 $(document).ready(function() {
     //When user clicks in another tab inactive, unactive actual tab
     //and activates selected tab
@@ -19,7 +24,8 @@ $(document).ready(function() {
             $.post("/users/logoutUser",{}).
             done(function(res) {
             if(res.status === "success"){
-                window.location.assign('/users/authenticateUser')}})
+                window.location.assign('/users/authenticateUser')}
+            })
         }
         $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
@@ -29,7 +35,14 @@ $(document).ready(function() {
     //When users click in delete button clear history from DB
     //and restarts map (To delete markers)
     $("#clearHistory").click(function(){
-        $.post("/locations/clearLocations",{})
+        $.post("/locations/clearLocations",{}, err => {
+            if(res.status === "host"){
+                Toast.fire({
+                    type: 'error',
+                    title: 'No microservice found'
+                  })
+            }
+        })
         updateTable()
         initMap()
     })
@@ -40,6 +53,7 @@ $(document).ready(function() {
         initMap()
     });
     
+ 
     
 });
 
@@ -76,6 +90,7 @@ function CoordsToMap(){
     }
     $.post("/locations/mapLocations",{trackId:$("#trackname").val()}).
     done(function(res) {
+        console.log(res)
       if(res.status === "success" && res.data.length > 0){
         $("#failed").hide();
         $("#found").show();
@@ -90,6 +105,13 @@ function CoordsToMap(){
                 placeMarker(pos,map,false)  
         }
       }else{
+        if(res.status === "host"){
+            Toast.fire({
+                type: 'error',
+                title: 'No microservice found'
+              })
+        }
+        
         $("#trackname").attr("placeholder","WRITE A VALID TRACK NAME")
         $("#found").hide();
         $("#failed").show();
@@ -138,7 +160,14 @@ function placeMarker(position, map, save) {
     });
     map.panTo(position);
     if(save){
-    $.post("../locations/saveLocation", {latitude:position.lat,longitude:position.lng,trackId: $("#track").val()})
+    $.post("../locations/saveLocation", {latitude:position.lat,longitude:position.lng,trackId: $("#track").val()}, err=> {
+        if(res.status === "host"){
+            Toast.fire({
+                type: 'error',
+                title: 'No microservice found'
+              })
+        }
+    }) 
     }
     }
 
@@ -169,7 +198,12 @@ function updateTable(){
         }
         txt += "</table>"    
         $('#tripsData').html(txt);
-      }
+      }else if(res.status === "host"){
+        Toast.fire({
+            type: 'error',
+            title: 'No microservice found'
+          })
+    }
 
       });
 }

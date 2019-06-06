@@ -15,7 +15,7 @@ const uuid = require('uuid/v4')
  
 //Communication and discovery
 const PORT = require('./config/instance')
-const client = require('./config/eureka-client')
+
 
 //Creates the instance
 const app = express();
@@ -60,10 +60,11 @@ app.use(function(err, req, res, next) {
 });
 
 
-
-client.start()
 //Server listening at port 3000
 
-app.listen(PORT, function(){
+const server = app.listen(PORT, function(){
 	console.log('Node server listening on port '+PORT);
 });
+
+
+console.log(server.address())

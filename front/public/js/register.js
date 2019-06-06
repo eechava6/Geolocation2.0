@@ -1,3 +1,10 @@
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
 $(document).ready(function() {
   $("#register").click(function(){
       //When users click in register button send a post request with data
@@ -10,6 +17,12 @@ $(document).ready(function() {
           window.location.assign('/users/authenticateUser')
         }else{
           $("#failed").show();
+          if(res.status === "host"){
+            Toast.fire({
+                type: 'error',
+                title: 'No microservice found'
+              })
+        }
         }
         })
       
