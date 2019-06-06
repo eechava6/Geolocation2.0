@@ -52,7 +52,6 @@ app.use(function(err, req, res, next) {
     }
 });
 
-client.start()
 app.listen(PORT, function(){
 	console.log('Node server listening on port '+PORT);
 });
