@@ -1,6 +1,12 @@
 //Import Location Model
 const locationModel = require('../models/locations');
+const client = require('../../../config/eureka-client')
 
+function getURL(){
+   instances = client.getInstancesByAppId('USERS');
+   random = Math.floor((Math.random()*instances.length-1) + 1);
+   return instances[random];
+}
 module.exports = {
 
 //Save a new location, user just send a post request and 
@@ -26,7 +32,6 @@ module.exports = {
  //Search all locations related to a user, user just send post request
  //and system determines username and calls DB finding his routes history
  search: function(req, res, next) {
-    console.log(req.get('host'))
     locationModel.find({username:req.body.username},'trackId latitude longitude hour date -_id',
      function(err, userInfo){
      if (userInfo == null || err) {

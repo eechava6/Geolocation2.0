@@ -48,9 +48,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-client.start()
 var server = app.listen(PORT, function(){
 	console.log('Node server listening on port '+PORT);
 });
 
-console.log(server.address())
+
