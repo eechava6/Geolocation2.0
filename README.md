@@ -9,7 +9,7 @@
 
 * [Front](front.md)
 
-* [Users](front.md)
+* [Users](users.md)
 
 * [Locations](locations.md)
 
