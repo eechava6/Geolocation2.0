@@ -5,9 +5,19 @@
 * Esteban Perez 
 * Esteban Echavarría
 
+# Diseño
+
+* [Front](front.md)
+
+* [Users](front.md)
+
+* [Locations](locations.md)
+
+* [Eureka](eureka.md)
+
+* [Nginx](nginx.md)
 
 # Project requirements per environment
-
 
 ## Requirements for development environment:
 
