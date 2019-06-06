@@ -16,7 +16,7 @@
 * Lenguaje de Programación: Javascript
 * Framework web backend: NodeJS - Express
 * Framework web frontend: Bootstrap
-* Base de datos: Mongo Atlas
+* Base de datos: NO TIENE BASE DE DATOS
 * Web App Server: NodeJS
 
 # 2. Desarrollo
