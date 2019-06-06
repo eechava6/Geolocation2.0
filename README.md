@@ -1,10 +1,72 @@
 # Final project - Geolocation 2.0
 
-
 ## Members
 
 * Esteban Perez 
 * Esteban Echavarría
+
+## 1. Analisis y Diseño
+
+
+## Requirements for development environment:
+
+* Node 
+* NPM
+* MongoDB
+* Maven
+* Java 12
+
+* Clone the project in your local machine.
+
+`git clone https://github.com/eechava6/Geolocation2.0`
+
+* Install the dependencies for "Locations" "Front" and "Users" microservices(You have to be in the folder were package.json resides) with the following command: 
+
+`NPM install`
+
+* Install cross-env globaly (Once is enoguh)
+
+`NPM install -g cross-env`
+
+* Run Mongo as daemon 
+
+`mongod --config {path-to-conf} `
+
+(By default path-to-conf is /usr/local/etc/mongod.conf in Unix) 
+
+* Build Eureka service with Maven
+
+`mvn clean install`
+
+* Start Eureka server with the generated Jar
+
+`java -jar {path-to-jar/app.jar}`
+
+* Start Front-end service  (You have to be in "front" folder)
+
+`npm start {desired-port} {host-ip} {eureka-host-ip}
+
+* Start Locations/Users service  (You have to be in "Locations/Users" folder respectively) (You need node Cross-env installed)
+
+`npm run dev {desired-port} {host-ip} {eureka-host-ip}
+
+** example ** : `java -jar target/EurekaServer-0.0.1-SNAPSHOT.jar`
+
+## Requirements for testing environment:
+
+* Docker
+* Docker Desktop (Optional)
+
+## Requirements for production environment:
+
+* Docker
+* AWS instance
+* SSL certificates for domain
+* Domain
+
+## Steps to test the project in Development environment:
+
+
 
 
 ### Build a container image for a microservice: 
