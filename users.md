@@ -1,5 +1,4 @@
 # Users microservice
-# Front End microservice
 
 # 1. Análisis
 
@@ -7,9 +6,6 @@
 
 1. Crear Usuario.
 2. Ingresar 
-3. Guardar ubicación
-4. Buscar ubicación
-5. Cargar Vistas
 
 ## 1.2 Definición de tecnología de desarrollo y despliegue para la aplicación:
 * Middleware de Node:  body-parser(Parser antes de Handlers), Bcrypt
