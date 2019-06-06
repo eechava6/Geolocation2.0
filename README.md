@@ -2,8 +2,10 @@
 
 # Members
 
-* Esteban Perez 
-* Esteban Echavarría
+* Esteban Perez - eechava6@eafit.edu.co - ** Role ** : Architect - Services Developer.
+* Esteban Echavarría - eperezn@eafit.edu.co ** Role ** : Cloud Engineer - Containers and external tools developer. 
+
+
 
 # Diseño
 
