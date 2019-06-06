@@ -16,6 +16,21 @@
 * Maven
 * Java 12
 
+## Requirements for testing environment:
+
+* Docker
+* Docker Desktop (Optional)
+
+## Requirements for production environment:
+
+* Docker
+* AWS instance
+* SSL certificates for domain
+* Domain
+* SSH
+
+## Steps to test the project in Development environment:
+
 * Clone the project in your local machine.
 
 `git clone https://github.com/eechava6/Geolocation2.0`
@@ -42,31 +57,16 @@
 
 `java -jar {path-to-jar/app.jar}`
 
-* Start Front-end service  (You have to be in "front" folder)
-
-`npm start {desired-port} {host-ip} {eureka-host-ip}
-
-* Start Locations/Users service  (You have to be in "Locations/Users" folder respectively) (You need node Cross-env installed)
-
-`npm run dev {desired-port} {host-ip} {eureka-host-ip}
 
 ** example ** : `java -jar target/EurekaServer-0.0.1-SNAPSHOT.jar`
 
-## Requirements for testing environment:
+* Start Front-end service  (You have to be in "front" folder)
 
-* Docker
-* Docker Desktop (Optional)
+`npm start {desired-port} {host-ip} {eureka-host-ip}`
 
-## Requirements for production environment:
+* Start Locations/Users service  (You have to be in "Locations/Users" folder respectively) (You need node Cross-env installed)
 
-* Docker
-* AWS instance
-* SSL certificates for domain
-* Domain
-
-## Steps to test the project in Development environment:
-
-
+`npm run dev {desired-port} {host-ip} {eureka-host-ip}`
 
 
 ### Build a container image for a microservice: 
@@ -75,7 +75,7 @@
 
 `docker build -t {image-name} .`
 
-### Run the container and map container port to local port:
+### Run the container and map container port to local port
 
 * Once the image was created, run the image in a desired port.
 
