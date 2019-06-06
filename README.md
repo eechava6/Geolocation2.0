@@ -22,3 +22,12 @@
 **example**: run the image usersMS mapping container port 5000/tcp to local port 3000
 
 `docker run -p 3000:5000/tcp  usersMS`
+
+**to run nginx** 
+
+`docker run -p 80:80 -p 443:443 -v /etc/certificates:/etc/certificates --name nginx nginx`
+
+**to pass parameters**
+
+`docker run -p 4000:4000 -e PORT=4000 HOST={host} EUREKA={eureka-host} --name {service} {service}
+
