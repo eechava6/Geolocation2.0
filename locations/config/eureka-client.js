@@ -6,7 +6,7 @@ console.log(statusURL)
 const client = new Eureka({
     // application instance information
     instance: {
-      app: 'front',
+      app: 'locations',
       hostName: args[3],
       ipAddr: args[3],
       statusPageUrl: statusURL,
